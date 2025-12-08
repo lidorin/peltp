@@ -11,6 +11,9 @@ body {
   scroll-behavior: smooth;
 }
 
+html[dir="ltr"] body {
+  direction: ltr;
+}
 
 /* Offset anchor targets so that section titles are visible when clicking navigation links.
    The navigation bar is fixed at the top (about 70px high), so give sections a scroll-margin

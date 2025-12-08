@@ -214,7 +214,7 @@
         },
         submit: 'إرسال',
         phoneText: 'أو تواصلوا معنا هاتفيًا:',
-        phoneNumber: '08-9934451'
+        phoneNumber: '089934451'
       }
     }
   };

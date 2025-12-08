@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <!-- Reduce referrer information for external requests -->
   <meta name="referrer" content="no-referrer">
   <script src="https://cdn.userway.org/widget.js" data-account="R7eyW04Lid"></script>
 </head>
@@ -29,12 +28,11 @@
       <span></span>
     </label>
 
-    <!-- Desktop language switcher will appear on larger screens -->
+
     <div class="lang-switcher desktop-lang-switcher" id="lang-switcher-desktop"></div>
     <a href="https://www.peletop.co.il/production/Login.aspx" class="login-btn desktop-login" id="nav-login-desktop"></a>
 
     <ul class="nav-menu">
-      <!-- Mobile language switcher – shown inside the slide‑out menu on smaller screens -->
       <li class="mobile-lang-switcher">
         <div class="lang-switcher" id="lang-switcher-mobile"></div>
       </li>
@@ -174,7 +172,6 @@
         </form>
       </div>
       <p id="contact-phone-wrapper" style="text-align:center;margin-top:15px;">
-        או חייגו אלינו:
         <a id="contact-phone-number" href="tel:089934451"></a>
       </p>
     </div>
@@ -187,7 +184,6 @@
 <script>
   var sendButton = document.getElementById("contact-submit");
 
-  // כל טוקן מוגדר לנמען אחר באתר של PostMail
   var accessTokens = [
     "pz45id5ufa1v0wkqx7xry9e1", //M
     "ikw6ek45f8p16yzwin40mek3"  //S
@@ -232,14 +228,13 @@
       "כתובת: " + address + "\n" +
       "טלפון: " + phone;
 
-    // הכנה של הדאטה המשותפת לכל הטוקנים
+
     var baseData = {
       subject:  "פנייה חדשה מהאתר",
       text:     message,
       reply_to: email
     };
 
-    // ניהול כמה בקשות במקביל
     var total = accessTokens.length;
     var done  = 0;
     var hasError = false;
@@ -259,8 +254,6 @@
           if (request.status !== 200) {
             hasError = true;
           }
-
-          // כשהסתיימו כל הבקשות
           if (done === total) {
             if (!hasError) {
               js_onSuccess();
@@ -308,7 +301,6 @@
 
   <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // יצירת אלמנט טולטיפ אחד לכל הדף
     const tooltip = document.createElement('div');
     tooltip.className = 'logo-tooltip';
     document.body.appendChild(tooltip);
@@ -321,7 +313,6 @@
       let x = event.clientX + OFFSET_X;
       let y = event.clientY + OFFSET_Y;
 
-      // שלא ייצא מחוץ למסך
       if (x + tooltipRect.width > window.innerWidth) {
         x = event.clientX - tooltipRect.width - OFFSET_X;
       }

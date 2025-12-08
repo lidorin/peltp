@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>פלאטוק</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Reduce referrer information for external requests -->
+  <meta name="referrer" content="no-referrer">
+  <script src="https://cdn.userway.org/widget.js" data-account="R7eyW04Lid"></script>
+</head>
+<body>
+  <div id="home"></div>
+  <nav>
+    <a href="#home" class="logo-wrapper" style="text-decoration: none;">
+      <img src="images/logo-icon.png" alt="לוגו פלאטוק" class="logo-icon">
+      <span class="logo-text">
+        <span class="logo-blue">פלא</span>
+        <span class="logo-orange">טוק</span>
+      </span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="פתיחת תפריט">
+    <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Desktop language switcher will appear on larger screens -->
+    <div class="lang-switcher desktop-lang-switcher" id="lang-switcher-desktop"></div>
+    <a href="https://www.peletop.co.il/production/Login.aspx" class="login-btn desktop-login" id="nav-login-desktop"></a>
+
+    <ul class="nav-menu">
+      <!-- Mobile language switcher – shown inside the slide‑out menu on smaller screens -->
+      <li class="mobile-lang-switcher">
+        <div class="lang-switcher" id="lang-switcher-mobile"></div>
+      </li>
+      <li class="login-item">
+        <a href="https://www.peletop.co.il/production/Login.aspx" class="login-btn" id="nav-login-mobile"></a>
+      </li>
+      <li><a href="#partners" id="nav-partners"></a></li>
+      <li><a href="#services" id="nav-services"></a></li>
+      <li><a href="#about" id="nav-about"></a></li>
+      <li><a href="#contact" id="nav-contact"></a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="home">
+    <h1 id="hero-title"></h1>
+    <p id="hero-paragraph"></p>
+    <a href="#contact" class="cta-btn" id="hero-cta"></a>
+  </header>
+
+  <section id="partners">
+    <div class="partners-group">
+      <h3 class="group-title" id="partners-title-1"></h3>
+      <div class="logos-grid">        
+        <div class="logo-card" data-title="סלקום">
+          <img src="logos/cellcom.svg" alt="Cellcom">
+        </div>
+        <div class="logo-card" data-title="פלאפון">
+          <img src="logos/pelephone.svg" alt="Pelephone">
+        </div>
+        <div class="logo-card" data-title="פרטנר">
+          <img src="logos/partner.svg" alt="Partner">
+        </div>
+        <div class="logo-card" data-title="012 מובייל">
+          <img src="logos/012.svg" alt="012">
+        </div>
+        <div class="logo-card" data-title="גולן טלקום">
+          <img src="logos/golan.svg" alt="Golan">
+        </div>
+        <div class="logo-card" data-title="Global SIM">
+          <img src="logos/global sim.svg" alt="Global SIM">
+        </div>
+        <div class="logo-card" data-title="כרטיסי חיוג לחו&quot;ל">
+          <img src="logos/hul.png" alt="כרטיסי חיוג לחו&quot;ל">
+        </div>
+        <div class="logo-card" data-title="013">
+          <img src="logos/013.png" alt="013">
+        </div>
+        <div class="logo-card" data-title="רב-קו">
+          <img src="logos/rav-kav.svg" alt="רב קו">
+        </div>
+        <div class="logo-card" data-title="זיהוי שיחה חסויה">
+          <img src="logos/incognito.png" alt="זהוי שיחה חסויה">
+        </div>
+      </div>
+    </div>
+
+    <div class="partners-group">
+      <h3 class="group-title" id="partners-title-2"></h3>
+      <div class="logos-grid">
+        <div class="logo-card" data-title="כביש 6">
+          <img src="logos/road6.svg" alt="כביש 6">
+        </div>
+        <div class="logo-card" data-title="כביש 6 צפון">
+          <img src="logos/6north.png" alt="כביש 6 צפון">
+        </div>
+        <div class="logo-card" data-title="חברת החשמל">
+          <img src="logos/hasmal.png" alt="חברת חשמל">
+        </div>
+        <div class="logo-card" data-title="דוחות משטרה">
+          <img src="logos/police.png" alt="דוחות משטרה">
+        </div>
+        <div class="logo-card" data-title="תשלום לרשויות">
+          <img src="logos/rashut.png" alt="תשלום לרשויות">
+        </div>
+        <div class="logo-card" data-title="בזק">
+          <img src="logos/bezeq.svg" alt="בזק">
+        </div>
+        <div class="logo-card" data-title="מנהרות הכרמל">
+          <img src="logos/karmel.svg" alt="מנהרות הכרמל">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="services">
+    <h2 class="section-title" id="services-title"></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fa-solid fa-sim-card"></i>
+        <h3 id="service1-title"></h3>
+        <p id="service1-desc"></p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-earth-asia"></i>
+        <h3 id="service2-title"></h3>
+        <p id="service2-desc"></p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-landmark"></i>
+        <h3 id="service3-title"></h3>
+        <p id="service3-desc"></p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-id-card"></i>
+        <h3 id="service4-title"></h3>
+        <p id="service4-desc"></p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-headset"></i>
+        <h3 id="service5-title"></h3>
+        <p id="service5-desc"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-container">
+      <h2 class="section-title" id="about-title"></h2>
+      <p id="about-p1"></p>
+      <p id="about-p2"></p>
+      <p id="about-p3"></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-container">
+      <h2 class="section-title" id="contact-title"></h2>
+      <div class="contact-form">
+        <form id="contact-form" onsubmit="return js_send();">
+          <input type="text" id="contact-name" name="name" placeholder="שם מלא" required>
+          <input type="email" id="contact-email" name="email" placeholder="אימייל" required>
+          <input type="text" id="contact-address" name="address" placeholder="כתובת" required>
+          <input type="tel" id="contact-phone" name="phone" placeholder="טלפון" required>
+          <textarea id="contact-message" name="message" placeholder="הודעתכם" required></textarea>
+          <button type="submit" id="contact-submit">שליחה</button>
+        </form>
+      </div>
+      <p id="contact-phone-wrapper" style="text-align:center;margin-top:15px;">
+        או חייגו אלינו:
+        <a id="contact-phone-number" href="tel:089934451"></a>
+      </p>
+    </div>
+  </section>
+
+  <a href="https://wa.me/972524455633" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="שליחת הודעת וואטסאפ">
+    <i class="fa-brands fa-whatsapp" style="font-size:32px;"></i>
+  </a>
+
+<script>
+  var sendButton = document.getElementById("contact-submit");
+
+  // כל טוקן מוגדר לנמען אחר באתר של PostMail
+  var accessTokens = [
+    "pz45id5ufa1v0wkqx7xry9e1", //M
+    "ikw6ek45f8p16yzwin40mek3"  //S
+  ];
+
+  function js_onSuccess() {
+    sendButton.innerText = "ההודעה נשלחה בהצלחה!";
+    sendButton.disabled = false;
+
+    document.getElementById("contact-name").value = "";
+    document.getElementById("contact-email").value = "";
+    document.getElementById("contact-address").value = "";
+    document.getElementById("contact-phone").value = "";
+    document.getElementById("contact-message").value = "";
+
+    setTimeout(function () {
+      sendButton.innerText = "שליחה";
+    }, 4000);
+  }
+
+  function js_onError(error) {
+    alert("שגיאה בשליחת ההודעה. נסה שוב מאוחר יותר.");
+    sendButton.innerText = "שליחה";
+    sendButton.disabled = false;
+  }
+
+  function js_send() {
+    sendButton.innerText = "שולח...";
+    sendButton.disabled = true;
+
+    var name  = document.getElementById("contact-name").value;
+    var email = document.getElementById("contact-email").value;
+    var address = document.getElementById("contact-address").value;
+    var phone = document.getElementById("contact-phone").value;
+    var msg   = document.getElementById("contact-message").value;
+
+    var message =
+      msg +
+      "\n\n---\nנשלח מאתר פלאטוק ע״י:\n" +
+      "שם: " + name + "\n" +
+      "אימייל: " + email + "\n" +
+      "כתובת: " + address + "\n" +
+      "טלפון: " + phone;
+
+    // הכנה של הדאטה המשותפת לכל הטוקנים
+    var baseData = {
+      subject:  "פנייה חדשה מהאתר",
+      text:     message,
+      reply_to: email
+    };
+
+    // ניהול כמה בקשות במקביל
+    var total = accessTokens.length;
+    var done  = 0;
+    var hasError = false;
+
+    accessTokens.forEach(function(token) {
+      var data_js = Object.assign({}, baseData, {
+        access_token: token
+      });
+
+      var params = toParams(data_js);
+
+      var request = new XMLHttpRequest();
+      request.onreadystatechange = function () {
+        if (request.readyState === 4) {
+          done++;
+
+          if (request.status !== 200) {
+            hasError = true;
+          }
+
+          // כשהסתיימו כל הבקשות
+          if (done === total) {
+            if (!hasError) {
+              js_onSuccess();
+            } else {
+              js_onError();
+            }
+          }
+        }
+      };
+
+      request.open("POST", "https://postmail.invotes.com/send", true);
+      request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      request.send(params);
+    });
+
+    return false; 
+  }
+
+  function toParams(data) {
+    var form_data = [];
+    for (var key in data) {
+      if (data.hasOwnProperty(key)) {
+        form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data[key]));
+      }
+    }
+    return form_data.join("&");
+  }
+</script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var navToggle = document.getElementById("nav-toggle");
+      var navLinks = document.querySelectorAll(".nav-menu a");
+      navLinks.forEach(function(link) {
+        link.addEventListener("click", function() {
+          if (navToggle.checked) {
+            navToggle.checked = false;
+          }
+        });
+      });
+    });
+  </script>
+
+  <script src="textContent.js" defer></script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // יצירת אלמנט טולטיפ אחד לכל הדף
+    const tooltip = document.createElement('div');
+    tooltip.className = 'logo-tooltip';
+    document.body.appendChild(tooltip);
+
+    const OFFSET_X = 12;
+    const OFFSET_Y = 12;
+
+    function moveTooltip(event) {
+      const tooltipRect = tooltip.getBoundingClientRect();
+      let x = event.clientX + OFFSET_X;
+      let y = event.clientY + OFFSET_Y;
+
+      // שלא ייצא מחוץ למסך
+      if (x + tooltipRect.width > window.innerWidth) {
+        x = event.clientX - tooltipRect.width - OFFSET_X;
+      }
+      if (y + tooltipRect.height > window.innerHeight) {
+        y = event.clientY - tooltipRect.height - OFFSET_Y;
+      }
+
+      tooltip.style.left = x + 'px';
+      tooltip.style.top = y + 'px';
+    }
+
+    document.querySelectorAll('.logo-card').forEach(function (card) {
+      const title = card.getAttribute('data-title');
+      if (!title) return;
+
+      card.addEventListener('mouseenter', function (e) {
+        tooltip.textContent = title;
+        tooltip.style.display = 'block';
+        moveTooltip(e);
+      });
+
+      card.addEventListener('mousemove', function (e) {
+        moveTooltip(e);
+      });
+
+      card.addEventListener('mouseleave', function () {
+        tooltip.style.display = 'none';
+      });
+    });
+  });
+  </script>
+
+
+</body>
+</html>

@@ -465,7 +465,7 @@ nav {
   text-align: center;
 }
 
-.logos-grid {
+.logos_landing-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -567,7 +567,7 @@ nav {
   }
 }
 
-.logos-row {
+.logos_landing-row {
   display: flex;
   flex-direction: column;
   gap: 30px;

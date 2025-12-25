@@ -69,7 +69,7 @@
       },
       loginModal: {
         title: 'בחרו מערכת',
-        description: 'לאן תרצו להתחבר?',
+        description: 'לאיזה מערכת אתם משויכים?',
         newSystem: 'מערכת חדשה',
         oldSystem: 'מערכת ישנה'
       }

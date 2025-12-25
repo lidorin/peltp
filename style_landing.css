@@ -653,7 +653,7 @@ body.high-contrast .hero {
   background: #000000 !important;
 }
 
-#userwayAccessibilityIcon,
+/* #userwayAccessibilityIcon,
 #userway-widget,
 .userway_widget,
 .userway-widget,
@@ -663,7 +663,7 @@ body.high-contrast .hero {
   left: 30px !important;
   right: auto !important;
   z-index: 999999 !important;
-}
+} */
 
 @media (min-width: 769px) {
   nav {

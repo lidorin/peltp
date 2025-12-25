@@ -30,14 +30,14 @@
 
 
     <div class="lang-switcher desktop-lang-switcher" id="lang-switcher-desktop"></div>
-    <a href="https://www.peletop.co.il/production/Login.aspx" class="login-btn desktop-login" id="nav-login-desktop"></a>
+    <a href="#" class="login-btn desktop-login" id="nav-login-desktop"></a>
 
     <ul class="nav-menu">
       <li class="mobile-lang-switcher">
         <div class="lang-switcher" id="lang-switcher-mobile"></div>
       </li>
       <li class="login-item">
-        <a href="https://www.peletop.co.il/production/Login.aspx" class="login-btn" id="nav-login-mobile"></a>
+        <a href="#" class="login-btn" id="nav-login-mobile"></a>
       </li>
       <li><a href="#partners" id="nav-partners"></a></li>
       <li><a href="#services" id="nav-services"></a></li>
@@ -343,6 +343,69 @@
       });
     });
   });
+  </script>
+
+  <div class="login-modal-overlay" id="login-modal" aria-hidden="true">
+    <div class="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+      <button class="modal-close" id="login-modal-close" aria-label="סגירת חלון">&times;</button>
+      <h2 id="login-modal-title">בחרו מערכת</h2>
+      <p id="login-modal-description">לאן תרצו להתחבר?</p>
+      <div class="login-modal-actions">
+        <a href="https://peletok.co.il" class="modal-btn primary" id="login-modal-new" target="_blank" rel="noopener noreferrer">מערכת חדשה</a>
+        <a href="https://www.peletop.co.il/production/Login.aspx" class="modal-btn secondary" id="login-modal-old" target="_blank" rel="noopener noreferrer">מערכת ישנה</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const modalOverlay = document.getElementById('login-modal');
+      const closeBtn = document.getElementById('login-modal-close');
+      const loginButtons = document.querySelectorAll('#nav-login-desktop, #nav-login-mobile');
+      const logoCards = document.querySelectorAll('.logo-card');
+
+      function openModal(event) {
+        if (event) {
+          event.preventDefault();
+        }
+        modalOverlay.classList.add('open');
+        modalOverlay.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeModal() {
+        modalOverlay.classList.remove('open');
+        modalOverlay.setAttribute('aria-hidden', 'true');
+      }
+
+      loginButtons.forEach(function (btn) {
+        btn.addEventListener('click', openModal);
+      });
+
+      logoCards.forEach(function (card) {
+        card.setAttribute('tabindex', '0');
+        card.addEventListener('click', openModal);
+        card.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openModal();
+          }
+        });
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+
+      modalOverlay.addEventListener('click', function (event) {
+        if (event.target === modalOverlay) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && modalOverlay.classList.contains('open')) {
+          closeModal();
+        }
+      });
+    });
   </script>
 
 

@@ -81,6 +81,12 @@
         submit: 'שליחה',
         phoneText: 'או צרו קשר טלפוני:',
         phoneNumber: '08-9934451'
+      },
+      loginModal: {
+        title: 'בחרו מערכת',
+        description: 'לאן תרצו להתחבר?',
+        newSystem: 'מערכת חדשה',
+        oldSystem: 'מערכת ישנה'
       }
     },
     en: {
@@ -148,6 +154,12 @@
         submit: 'Send',
         phoneText: 'Or contact us by phone:',
         phoneNumber: '08-9934451'
+      },
+      loginModal: {
+        title: 'Choose a system',
+        description: 'Where would you like to log in?',
+        newSystem: 'New system',
+        oldSystem: 'Old system'
       }
     },
     ar: {
@@ -215,6 +227,12 @@
         submit: 'إرسال',
         phoneText: 'أو تواصلوا معنا هاتفيًا:',
         phoneNumber: '089934451'
+      },
+      loginModal: {
+        title: 'اختاروا النظام',
+        description: 'إلى أي نظام تريدون تسجيل الدخول؟',
+        newSystem: 'نظام جديد',
+        oldSystem: 'نظام قديم'
       }
     }
   };
@@ -331,6 +349,16 @@
       phoneNumberLink.textContent = content.contact.phoneNumber;
       phoneNumberLink.setAttribute('href', `tel:${content.contact.phoneNumber.replace(/[^0-9+]/g, '')}`);
     }
+
+    // Login modal
+    const modalTitle = document.getElementById('login-modal-title');
+    const modalDescription = document.getElementById('login-modal-description');
+    const modalNew = document.getElementById('login-modal-new');
+    const modalOld = document.getElementById('login-modal-old');
+    if (modalTitle) modalTitle.textContent = content.loginModal.title;
+    if (modalDescription) modalDescription.textContent = content.loginModal.description;
+    if (modalNew) modalNew.textContent = content.loginModal.newSystem;
+    if (modalOld) modalOld.textContent = content.loginModal.oldSystem;
   }
 
   /**

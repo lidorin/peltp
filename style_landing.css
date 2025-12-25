@@ -497,6 +497,15 @@ nav {
   max-height: 80px;
 }
 
+.logo-card {
+  cursor: pointer;
+}
+
+.logo-card:focus {
+  outline: 3px solid #005a7a;
+  outline-offset: 2px;
+}
+
 /* -------------------------------------------------------------
    Language switcher styling
    The site supports Hebrew, English and Arabic translations.  The
@@ -692,4 +701,91 @@ body.high-contrast .hero {
   pointer-events: none;
   z-index: 10000;
   white-space: nowrap;
+}
+
+/* ===== חלון בחירת מערכת התחברות ===== */
+.login-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 16px;
+}
+
+.login-modal-overlay.open {
+  display: flex;
+}
+
+.login-modal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  text-align: center;
+}
+
+.login-modal h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #005a7a;
+}
+
+.login-modal p {
+  margin: 0 0 16px;
+  color: #0a2342;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #005a7a;
+}
+
+.login-modal-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.modal-btn {
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  min-width: 160px;
+  text-align: center;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.modal-btn.primary {
+  background: #005a7a;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 90, 122, 0.3);
+}
+
+.modal-btn.primary:hover {
+  background: #004a63;
+}
+
+.modal-btn.secondary {
+  background: #f5af19;
+  color: #0a2342;
+  box-shadow: 0 4px 12px rgba(245, 175, 25, 0.3);
+}
+
+.modal-btn.secondary:hover {
+  background: #d99616;
+  color: #0a2342;
 }

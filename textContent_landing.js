@@ -1,20 +1,5 @@
-/*
-  Multi‑language content and language switcher for the Peletalk landing page.
-
-  This script defines translations for Hebrew, English and Arabic and
-  applies them dynamically to the DOM.  A language switcher is
-  attached to the page which lets visitors toggle between languages.
-
-  When the language changes the document's `lang` and `dir`
-  attributes are updated accordingly, and all textual content,
-  placeholders and button labels are refreshed.  The active
-  language button is underlined.
-*/
 (function () {
-  // Define translations for each supported language.  The Hebrew
-  // values are based on the original site content.  English and
-  // Arabic translations have been carefully crafted to convey the
-  // same meaning.
+
   const translations = {
     he: {
       siteTitle: 'פלאטוק',
@@ -237,7 +222,6 @@
     }
   };
 
-  // Hold the current language; default to Hebrew.
   let currentLang = 'he';
 
   /**
@@ -254,33 +238,25 @@
     if (!content) return;
     currentLang = lang;
 
-    // Update document language and direction
-    document.documentElement.lang = lang;
-    // English is left‑to‑right; Hebrew and Arabic are right‑to‑left
-    document.documentElement.dir = lang === 'en' ? 'ltr' : 'rtl';
 
-    // Ensure the navigation bar follows the reading direction.  When the
-    // site is in English the nav should flow left‑to‑right; for Hebrew
-    // and Arabic it should be right‑to‑left.  We explicitly set the
-    // dir attribute on the nav element so that the flex ordering
-    // remains intuitive across languages.
+    document.documentElement.lang = lang;
+
+    document.documentElement.dir = lang === 'en' ? 'ltr' : 'rtl';
     const navEl = document.querySelector('nav');
     if (navEl) {
       navEl.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');
     }
 
-    // Document title
+
     if (content.siteTitle) {
       document.title = content.siteTitle;
     }
 
-    // Navigation login buttons (desktop and mobile)
     const loginDesktop = document.getElementById('nav-login-desktop');
     const loginMobile = document.getElementById('nav-login-mobile');
     if (loginDesktop) loginDesktop.textContent = content.nav.login;
     if (loginMobile) loginMobile.textContent = content.nav.login;
 
-    // Navigation links
     const navLinks = ['partners', 'services', 'about', 'contact'];
     navLinks.forEach((key) => {
       const el = document.getElementById(`nav-${key}`);
@@ -289,7 +265,6 @@
       }
     });
 
-    // Hero section
     const heroTitle = document.getElementById('hero-title');
     const heroParagraph = document.getElementById('hero-paragraph');
     const heroCta = document.getElementById('hero-cta');
@@ -297,13 +272,11 @@
     if (heroParagraph) heroParagraph.textContent = content.hero.paragraph;
     if (heroCta) heroCta.textContent = content.hero.cta;
 
-    // Partners section
     const partners1 = document.getElementById('partners-title-1');
     const partners2 = document.getElementById('partners-title-2');
     if (partners1) partners1.textContent = content.partners.group1;
     if (partners2) partners2.textContent = content.partners.group2;
 
-    // Services section
     const servicesTitle = document.getElementById('services-title');
     if (servicesTitle) servicesTitle.textContent = content.services.title;
     content.services.cards.forEach((card, index) => {
@@ -313,7 +286,6 @@
       if (p) p.textContent = card.desc;
     });
 
-    // About section
     const aboutTitle = document.getElementById('about-title');
     if (aboutTitle) aboutTitle.textContent = content.about.title;
     content.about.paragraphs.forEach((txt, index) => {
@@ -321,7 +293,6 @@
       if (para) para.textContent = txt;
     });
 
-    // Contact section
     const contactTitle = document.getElementById('contact-title');
     if (contactTitle) contactTitle.textContent = content.contact.title;
     const nameInput = document.getElementById('contact-name');
@@ -336,7 +307,7 @@
     if (phoneInput) phoneInput.placeholder = content.contact.placeholders.phone;
     if (messageTextarea) messageTextarea.placeholder = content.contact.placeholders.message;
     if (submitBtn) submitBtn.textContent = content.contact.submit;
-    // Phone wrapper text and number
+
     const phoneWrapper = document.getElementById('contact-phone-wrapper');
     const phoneNumberLink = document.getElementById('contact-phone-number');
     if (phoneWrapper) {
@@ -350,7 +321,6 @@
       phoneNumberLink.setAttribute('href', `tel:${content.contact.phoneNumber.replace(/[^0-9+]/g, '')}`);
     }
 
-    // Login modal
     const modalTitle = document.getElementById('login-modal-title');
     const modalDescription = document.getElementById('login-modal-description');
     const modalNew = document.getElementById('login-modal-new');
@@ -390,7 +360,7 @@
       btn.addEventListener('click', () => {
         applyTranslations(code);
         updateActiveButtons();
-        // Close the mobile menu after changing language
+
         const navToggle = document.getElementById('nav-toggle');
         if (navToggle && navToggle.checked) {
           navToggle.checked = false;
@@ -400,10 +370,7 @@
     });
   }
 
-  /**
-   * Update the active state on all language buttons to reflect
-   * the currently selected language.
-   */
+
   function updateActiveButtons() {
     const allButtons = document.querySelectorAll('.lang-switcher button');
     allButtons.forEach((btn) => {
@@ -415,17 +382,13 @@
     });
   }
 
-  // Initialise once the DOM has loaded
+
   document.addEventListener('DOMContentLoaded', () => {
-    // Apply the default language
     applyTranslations(currentLang);
-    // Build both desktop and mobile language switchers
     setupLangSwitcher('lang-switcher-desktop');
     setupLangSwitcher('lang-switcher-mobile');
-    // Mark the correct language as active
     updateActiveButtons();
 
-    // Preserve existing nav toggle behaviour: collapse menu after clicking any link
     var navToggle = document.getElementById('nav-toggle');
     var navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(function (link) {

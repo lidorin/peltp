@@ -15,9 +15,6 @@ html[dir="ltr"] body {
   direction: ltr;
 }
 
-/* Offset anchor targets so that section titles are visible when clicking navigation links.
-   The navigation bar is fixed at the top (about 70px high), so give sections a scroll-margin
-   to account for it. */
 section {
   scroll-margin-top: 90px;
 }
@@ -506,14 +503,7 @@ nav {
   outline-offset: 2px;
 }
 
-/* -------------------------------------------------------------
-   Language switcher styling
-   The site supports Hebrew, English and Arabic translations.  The
-   language switcher appears as a row of buttons.  On larger
-   screens it is positioned absolutely on the left side of the
-   navigation bar; on small screens it is placed inside the
-   slide‑out menu.  Active language buttons are underlined.
-*/
+
 .lang-switcher {
   display: flex;
   gap: 8px;
@@ -675,10 +665,9 @@ body.high-contrast .hero {
   z-index: 999999 !important;
 }
 
-/* דסקטופ – תפריט במרכז, לוגו בצד ימין */
 @media (min-width: 769px) {
   nav {
-    justify-content: center;   /* כל מה שבפנים ממורכז */
+    justify-content: center;  
   }
 
   .logo-wrapper {
@@ -689,7 +678,7 @@ body.high-contrast .hero {
   }
 }
 
-/* ===== טולטיפ ללוגו-קארד ===== */
+
 .logo-tooltip {
   position: fixed;
   display: none;
@@ -703,7 +692,6 @@ body.high-contrast .hero {
   white-space: nowrap;
 }
 
-/* ===== חלון בחירת מערכת התחברות ===== */
 .login-modal-overlay {
   position: fixed;
   inset: 0;
